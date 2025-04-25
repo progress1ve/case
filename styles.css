@@ -1,0 +1,218 @@
+/* Основные стили приложения */
+:root {
+    --tg-theme-bg-color: #ffffff;
+    --tg-theme-text-color: #000000;
+    --tg-theme-hint-color: #999999;
+    --tg-theme-link-color: #2481cc;
+    --tg-theme-button-color: #2481cc;
+    --tg-theme-button-text-color: #ffffff;
+    --primary-color: #2481cc;
+    --secondary-color: #5b5b5b;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+/* При инициализации Telegram Web App, эти переменные будут перезаписаны */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+                 Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Стили профиля пользователя */
+.user-profile-section {
+    margin-bottom: 1.5rem;
+}
+
+.user-avatar img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Стили секции баланса */
+.balance-section {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.balance-section .card-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/* Стили кнопок действий */
+.action-buttons .btn {
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+/* Стили для карточек активов */
+.asset-card {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.asset-card:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.asset-icon img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+}
+
+/* Стили для экранов */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--tg-theme-bg-color);
+    z-index: 10;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.screen-header {
+    margin-bottom: 1.5rem;
+}
+
+/* Стили транзакций */
+.transaction-item {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--light-color);
+}
+
+.transaction-amount-positive {
+    color: var(--success-color);
+}
+
+.transaction-amount-negative {
+    color: var(--danger-color);
+}
+
+/* QR код */
+#qrcode-container {
+    display: flex;
+    justify-content: center;
+}
+
+#qrcode-container canvas {
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 576px) {
+    .container {
+        padding: 0.75rem;
+    }
+    
+    .balance-amount {
+        font-size: 2rem;
+    }
+    
+    .screen {
+        padding: 0.75rem;
+    }
+}
+
+/* Темная тема */
+.dark-theme {
+    --tg-theme-bg-color: #1f1f1f;
+    --tg-theme-text-color: #ffffff;
+    --tg-theme-hint-color: #999999;
+    --tg-theme-link-color: #64b5f6;
+    --tg-theme-button-color: #2196f3;
+    --tg-theme-button-text-color: #ffffff;
+    --light-color: #343a40;
+}
+
+.dark-theme .card {
+    background-color: #2d2d2d;
+    border-color: #333;
+}
+
+.dark-theme .form-control {
+    background-color: #333;
+    border-color: #444;
+    color: #fff;
+}
+
+.dark-theme .input-group-text {
+    background-color: #444;
+    border-color: #444;
+    color: #fff;
+}
+
+.dark-theme .modal-content {
+    background-color: #2d2d2d;
+    border-color: #333;
+}
+
+.dark-theme .modal-header, .dark-theme .modal-footer {
+    border-color: #444;
+}
+
+.dark-theme .btn-secondary {
+    background-color: #555;
+    border-color: #666;
+}
+
+/* Адаптация под Telegram темы */
+body.telegram-app {
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+}
+
+.telegram-app .btn-primary {
+    background-color: var(--tg-theme-button-color);
+    border-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+}
+
+.telegram-app a {
+    color: var(--tg-theme-link-color);
+}
+
+.telegram-app .text-muted {
+    color: var(--tg-theme-hint-color) !important;
+} 
